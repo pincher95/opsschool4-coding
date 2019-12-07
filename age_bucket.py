@@ -10,7 +10,7 @@ def list_age_bucket():
             age_bucket_list = json.load(f)
         # JSON to dict, Max age, sort bucket ages...
         age_list = age_bucket_list['ppl_ages']
-        sort_file = yaml.dump(age_list, sort_keys=True)
+        # sort_file = yaml.dump(age_list, sort_keys=True)
         max_age = max(age_list, key=age_list.get)
         bucket_list = sorted(age_bucket_list['buckets'])
         # Sorted buckets by ages
