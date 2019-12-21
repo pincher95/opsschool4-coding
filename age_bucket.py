@@ -5,15 +5,11 @@ import sys
 
 def list_age_bucket():
     try:
-        # Loading JSON file
         with open('./hw.json') as f:
             age_bucket_list = json.load(f)
-        # JSON to dict, Max age, sort bucket ages...
         age_list = age_bucket_list['ppl_ages']
-        # sort_file = yaml.dump(age_list, sort_keys=True)
         max_age = max(age_list, key=age_list.get)
         bucket_list = sorted(age_bucket_list['buckets'])
-        # Sorted buckets by ages
         sorted_age_bucket = {"0-" + str(bucket_list[0]): [], str(bucket_list[0]) + "-" + str(bucket_list[1]): [],
                              str(bucket_list[1]) + "-" + str(bucket_list[2]): [],
                              str(bucket_list[2]) + "-" + str(bucket_list[3]): [], str(bucket_list[3]) + "-102": []}
